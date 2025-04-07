@@ -8,7 +8,7 @@ import axios from "axios";
 import { HomeContext } from "./HomeContext";
 import { useNavigate } from "react-router-dom";
 import "../../index.css";
-const VITE_BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+import { VITE_BACKEND_URL } from "../../const_var";
 
 const Home = () => {
   const [cookies, removeCookie] = useCookies(["token"]);
@@ -16,13 +16,16 @@ const Home = () => {
   const [UID, setUID] = useState(localStorage.getItem("id"));
   const [wallet, setWallet] = useState(0);
   const [personalholdings, setPersonalHoldings] = useState([]);
-  const [watchlist, setWatchlist] = useState(localStorage.getItem("watchlist") ? JSON.parse(localStorage.getItem("watchlist")) : []);
+  const [watchlist, setWatchlist] = useState(
+    localStorage.getItem("watchlist")
+      ? JSON.parse(localStorage.getItem("watchlist"))
+      : []
+  );
   const navigate = useNavigate();
 
   useEffect(() => {
     const verifyCookie = async () => {
       try {
-
         const { data } = await axios.post(
           `${VITE_BACKEND_URL}`,
           {},

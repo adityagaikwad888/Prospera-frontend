@@ -4,6 +4,7 @@ import { sellStyles, quantityStyles } from "../constants";
 import { GeneralContext } from "./GeneralContext";
 import axios from "axios";
 import { HomeContext } from "./HomeContext";
+import { VITE_BACKEND_URL } from "../../const_var";
 
 const BuyActionWindow = ({ options }) => {
   const [values, setValues] = useState({
@@ -15,7 +16,6 @@ const BuyActionWindow = ({ options }) => {
   const { id, wallet } = useContext(HomeContext);
   const [holdings, setHoldings] = useState([]);
   const margin = values.stockQuantity * values.stockPrice;
-  const VITE_BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
   useEffect(() => {
     axios
@@ -79,7 +79,20 @@ const BuyActionWindow = ({ options }) => {
   };
 
   return (
-    <div style={{position:"fixed", top:"0px" , left:"0px", width:"100%", height:"100%", background:"rgba(0,0,0,0.5)", display:"flex", justifyContent:"center", alignItems:"center", zIndex:"1000"}}>
+    <div
+      style={{
+        position: "fixed",
+        top: "0px",
+        left: "0px",
+        width: "100%",
+        height: "100%",
+        background: "rgba(0,0,0,0.5)",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        zIndex: "1000",
+      }}
+    >
       <div style={sellStyles.container}>
         <h2 style={sellStyles.header}>Place Sell Order</h2>
 

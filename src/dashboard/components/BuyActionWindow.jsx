@@ -4,7 +4,7 @@ import { styles } from "../constants";
 import { GeneralContext } from "./GeneralContext";
 import axios from "axios";
 import { HomeContext } from "./HomeContext";
-const VITE_BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+import { VITE_BACKEND_URL } from "../../const_var";
 
 const BuyActionWindow = ({ options }) => {
   const [values, setValues] = useState({
@@ -55,7 +55,20 @@ const BuyActionWindow = ({ options }) => {
   };
 
   return (
-    <div style={{position:"fixed", top:"0px" , left:"0px", width:"100%", height:"100%", background:"rgba(0,0,0,0.5)", display:"flex", justifyContent:"center", alignItems:"center", zIndex:"1000"}}>
+    <div
+      style={{
+        position: "fixed",
+        top: "0px",
+        left: "0px",
+        width: "100%",
+        height: "100%",
+        background: "rgba(0,0,0,0.5)",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        zIndex: "1000",
+      }}
+    >
       <div style={styles.container} draggable>
         <h2 style={styles.header}>Place Buy Order</h2>
 

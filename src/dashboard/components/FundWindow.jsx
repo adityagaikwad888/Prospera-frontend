@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FundContext } from "./FundContext";
 import { HomeContext } from "./HomeContext";
 import axios from "axios";
-const VITE_BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+import { VITE_BACKEND_URL } from "../../const_var";
 
 const FundWindow = () => {
   const [amount, setAmount] = useState("");

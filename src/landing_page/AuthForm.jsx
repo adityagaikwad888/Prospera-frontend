@@ -5,9 +5,9 @@ import toast, { Toaster } from "react-hot-toast";
 import { Loader2 } from "lucide-react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-const VITE_BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+import { VITE_BACKEND_URL } from "../const_var";
 
-const AuthForm = ({ type}) => {
+const AuthForm = ({ type }) => {
   const [viewpassword, setViewPassword] = useState(false);
   const [isLoading, setIsloading] = useState(false);
   const navigate = useNavigate();

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-const VITE_BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+import { VITE_BACKEND_URL } from "../../const_var";
 
 const Positions = () => {
   const [positions, setPositions] = useState([]);
@@ -10,7 +10,7 @@ const Positions = () => {
     axios.get(`${VITE_BACKEND_URL}/allPositions`).then((res) => {
       setPositions(res.data);
     });
-  },[]);
+  }, []);
   return (
     <>
       <h3 className="section-title">
@@ -21,7 +21,7 @@ const Positions = () => {
         <table>
           <thead>
             <tr>
-              <th style={{textAlign:"center"}}>Product</th>
+              <th style={{ textAlign: "center" }}>Product</th>
               <th>Instrument</th>
               <th>Qty.</th>
               <th>Avg.</th>
@@ -39,9 +39,14 @@ const Positions = () => {
               const dayClass = stock.isLoss ? "loss" : "profit";
               return (
                 <tr key={index} className={index % 2 === 0 ? "even" : "odd"}>
-                  <td style={{padding:"10px 20px"}}>
-                    <div style={{textAlign:"center", backgroundColor: "rgb(255, 0, 0, 0.6)"}}>
-                    {stock.product}
+                  <td style={{ padding: "10px 20px" }}>
+                    <div
+                      style={{
+                        textAlign: "center",
+                        backgroundColor: "rgb(255, 0, 0, 0.6)",
+                      }}
+                    >
+                      {stock.product}
                     </div>
                   </td>
                   <td>{stock.name}</td>

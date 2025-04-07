@@ -2,7 +2,7 @@ import { React, useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { HomeContext } from "./HomeContext";
-const VITE_BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+import { VITE_BACKEND_URL } from "../../const_var";
 
 const Orders = () => {
   let [orders, setOrders] = useState([]);
