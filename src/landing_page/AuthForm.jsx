@@ -67,14 +67,6 @@ const AuthForm = ({ type }) => {
         );
 
         const { message, success } = data;
-        // if (success) {
-        //   handleSuccess(message);
-        //   setTimeout(() => {
-        //     navigate("/");
-        //   }, 1000);
-        // } else {
-        //   handleError(message);
-        // }
       } else {
         const { data } = await axios.post(
           `${VITE_BACKEND_URL}/signin`,
@@ -86,14 +78,6 @@ const AuthForm = ({ type }) => {
         );
 
         const { message, success } = data;
-        // if (success) {
-        //   handleSuccess(message);
-        //   setTimeout(() => {
-        //     navigate("/");
-        //   }, 1000);
-        // } else {
-        //   handleError(message);
-        // }
       }
     } catch (err) {
       console.log(err);
